@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>CV</title>
+  </head>
+  <body>
+
+    <session>
+    <div class="container contact-form">
+           
+        <form method="post">
+            <h3>TITRE</h3>
+           <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" id="titre" class="form-control" placeholder="Titre *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="fullName" class="form-control" placeholder="fullName *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="email" class="form-control" placeholder="Adress Email *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="phone" class="form-control" placeholder="Your Phone Number *" value="" />
+                    </div>
+                   
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <textarea id="address" class="form-control" placeholder="Your Adress *" style="width: 100%; height: 150px;"></textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+</div>
+
+</session>
+    <hr>
+
+    <session>
+        <div class="container contact-form">
+               
+            <form method="post">
+                
+               <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <h4>Compétences techniques</h4>
+                            <textarea id="competences" class="form-control" placeholder="Compétences *" style="width: 100%; height: 150px;"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <h4>Formations</h4>
+                            <textarea id="formations" class="form-control" placeholder="Formations *" style="width: 100%; height: 150px;"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <h4>Langues</h4>
+                            <textarea id="langues" class="form-control" placeholder="Langues *" style="width: 100%; height: 150px;"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <h4>Expériences professionnelles</h4>
+                            <textarea id="experiences" class="form-control" placeholder="Experiences *" style="width: 100%; height: 150px;"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <h4>Projets réalisés</h4>
+                            <textarea id="projetsRealises" class="form-control" placeholder="Projets réalisés *" style="width: 100%; height: 150px;"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <h4>Centres D’intérêts</h4>
+                            <textarea id="centresDinterets" class="form-control" placeholder="Centres D’intérêts *" style="width: 100%; height: 150px;"></textarea>
+                        </div>
+                    </div>
+                </div>  
+            </form>
+    </div>
+    
+    </session>
+    <hr>
+    <session>
+        <div class="container contact-form" 
+        style="background: -webkit-linear-gradient(left, #0072ff, #00c6ff);" >
+            <div class="d-grid gap-2">
+                <button onclick="saveCV()" class="btn btn-success" type="button">VALIDER</button>
+            </div>
+        </div>
+    </session>
+
+    <script>
+        function saveCV(){
+            var titre = document.getElementById('titre').value;
+            var fullName = document.getElementById('fullName').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var address = document.getElementById('address').value;
+            var competences = document.getElementById('competences').value;
+            var experiences = document.getElementById('experiences').value;
+            var formations = document.getElementById('formations').value;
+            var projetsRealises = document.getElementById('projetsRealises').value;
+            var langues = document.getElementById('langues').value;
+            var centresDinterets = document.getElementById('centresDinterets').value;
+            // localStorage.setItem('testingvuejs',a);
+            var dataCv = {
+                titre:titre,
+                fullName:fullName,
+                email:email,
+                phone:phone,
+                address:address,
+                competences:competences,
+                experiences:experiences,
+                formations:formations,
+                projetsRealises:projetsRealises,
+                langues:langues,
+                centresDinterets:centresDinterets,
+            }
+            localStorage.setItem('localDataCv', JSON.stringify(dataCv));
+            window.location.assign("result.html")
+        }
+        
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
